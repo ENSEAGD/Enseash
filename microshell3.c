@@ -21,7 +21,7 @@ while(1){
 
     if (strcmp(commande, "exit") == 0 || bytesRead == 0) {
         
-        write(STDOUT_FILENO, "Bye bye...\n", 11);
+        write(STDOUT_FILENO, "Bye bye...\n", 12);
         break;
          
         } 
