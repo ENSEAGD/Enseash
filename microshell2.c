@@ -20,8 +20,10 @@ while(1){
     commande[bytesRead] = '\0';
 
     if (strcmp(commande, "exit") == 0) {
-        break;
         
+        write(STDOUT_FILENO, "\n", 2);
+        break;
+         
         } 
         pid_t pid = fork();
 
