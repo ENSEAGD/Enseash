@@ -21,7 +21,7 @@ while(1){
 
     if (strcmp(commande, "exit") == 0) {
         
-        write(STDOUT_FILENO, "\n", 2);
+        write(STDOUT_FILENO, "\n", 0);
         break;
          
         } 
