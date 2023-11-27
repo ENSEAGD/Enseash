@@ -24,7 +24,7 @@ while(1){
         
         } else {
         
-        write(STDOUT_FILENO, "nous ne connaissons pas la commande que vous avez entrez pour l'instant je ne connais que la commande 'exit' :3 /n", 99)
+        write(STDOUT_FILENO, "nous ne connaissons pas la commande que vous avez entrez pour l'instant je ne connais que la commande 'exit' :3 /n", 99);
             
         }
     
