@@ -9,7 +9,7 @@ while(1){
     
     write(STDOUT_FILENO, "Bienvenue dans le Shell ENSEA.\nPour quitter, tapez 'exit'.\n", 57);
 
-    bytesRead = read(STDIN_FILENO, commande, sizeof(commande));
+    bytesRead = read(STDIN_FILENO, commande, 1024);
     
     commande[bytesRead] = '\0';
 
@@ -23,7 +23,7 @@ while(1){
         if (pid == 0) {
             //Child process
             if (strlen(input) == 0) {
-                // Si l'utilisateur n'entre rien, affiche la date
+                //User entered nothing so the code print the date
                 execlp("date", "date", NULL);
             }
             else{
@@ -32,7 +32,7 @@ while(1){
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
             //Parent process
-            wait(NULL); // Attends la fin du processus enfant
+            wait(NULL); //Wait the end of the child process
         } 
     
     
