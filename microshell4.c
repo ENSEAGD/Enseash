@@ -5,9 +5,9 @@
 #include <string.h>
 #include <stdio.h>
 
-void displayPrompt(int status) {
+void displayPrompt(int status) {//we create a fonction to display the return code
     if (WIFEXITED(status)) {
-        //If the process ended normalement
+        //If the process ended normally
         write(STDOUT_FILENO, "[exit:", 6);
         dprintf(STDOUT_FILENO, "%d", WEXITSTATUS(status));
         write(STDOUT_FILENO, "] % ", 4);
