@@ -21,16 +21,19 @@ while(1){
         pid_t pid = fork();
 
         if (pid == 0) {
-            // Processus enfant
+            //Child process
+            if (strlen(input) == 0) {
+                // Si l'utilisateur n'entre rien, affiche la date
+                execlp("date", "date", NULL);
+            }
+            else{
             execlp(input, input, NULL);
-            perror("Erreur lors de l'exécution de la commande"); // En cas d'échec de l'exécution
+            }
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
-            // Processus parent
+            //Parent process
             wait(NULL); // Attends la fin du processus enfant
-        } else {
-            perror("Erreur lors de la création du processus");
-        }
+        } 
     
     
 }
