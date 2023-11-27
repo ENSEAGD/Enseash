@@ -4,6 +4,12 @@
 #include <string.h>
 #include <stdio.h>
 
+main(){
+
+
+char commande[100];
+ssize_t bytesRead;
+
 
 while(1){
     
@@ -14,7 +20,6 @@ while(1){
     commande[bytesRead] = '\0';
 
     if (strcmp(commande, "exit") == 0) {
-        write(STDOUT_FILENO, "Au revoir !\n", 12);
         break;
         
         } 
@@ -36,6 +41,7 @@ while(1){
         } 
     
     
+    }
 }
 
 
