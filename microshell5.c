@@ -35,11 +35,11 @@ while(1){
     
     write(STDOUT_FILENO, "Bienvenue dans le Shell ENSEA.\nPour quitter, tapez 'exit'.\n", 57);
 
-    bytesRead = read(STDIN_FILENO, commande, 1024);
+    bytesRead = read(STDIN_FILENO, input, 1024);
     
     commande[bytesRead] = '\0';
 
-    if (strcmp(commande, "exit") == 0 || bytesRead == 0) {
+    if (strcmp(input, "exit") == 0 || bytesRead == 0) {
         
         write(STDOUT_FILENO, "Bye bye...\n", 12);
         break;
