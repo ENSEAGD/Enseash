@@ -56,7 +56,7 @@ while(1){
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
             //Parent process
-            waitpid(pid, &status, 0) < 0); //Wait the end of the child process
+            waitpid(pid, &status, 0); //Wait the end of the child process
         } 
     
     
