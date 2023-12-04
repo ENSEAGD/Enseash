@@ -40,7 +40,7 @@ while(1){
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
             //Parent process
-            waitpid(pid, &status, 0) < 0);
+            waitpid(pid, &status, 0);//wait the chil process
         } 
     
     
