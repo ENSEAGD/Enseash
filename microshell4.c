@@ -23,7 +23,7 @@ void displayPrompt(int status) {//we create a fonction to display the return cod
 main(){
 
 
-char commande[100];
+char input[100];
 ssize_t bytesRead;
 
 
