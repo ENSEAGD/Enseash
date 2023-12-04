@@ -34,11 +34,11 @@ while(1){
             //Child process
             if (strlen(input)== 0) {
                 //User entered nothing so the code print the date
-                execlp("date", "date", NULL);
+                execvp("date", "date", NULL);
             }
             else{
                 printf("%s", &input);            
-                execlp(input, input, NULL);
+                execvp(input, input, NULL);
             }
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
