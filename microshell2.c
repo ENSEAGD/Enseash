@@ -30,12 +30,12 @@ while(1){
 
         if (pid == 0) {
             //Child process
-            if (strlen(input) == 0) {
+            if (strlen(commande) == 0) {
                 //User entered nothing so the code print the date
                 execlp("date", "date", NULL);
             }
             else{
-            execlp(input, input, NULL);
+            execlp(commande, commande, NULL);
             }
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
