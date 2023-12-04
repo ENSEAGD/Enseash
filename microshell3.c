@@ -27,7 +27,7 @@ while(1){
         // If the user entered 'exit' or use CTRL+D we exit the program
          
         } 
-        pid_t pid = fork();
+        pid_t pid = fork();//We give birth to a new copy process
 
         if (pid == 0) {
             //Child process
