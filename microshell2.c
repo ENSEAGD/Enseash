@@ -34,6 +34,9 @@ while(1){
                 //User entered nothing so the code print the date
                 execlp("date", "date", NULL);
             }
+            else if (strcmp(input, "install fortune") == 0) {
+                execlp("sudo", "sudo", "apt-get", "install", "fortune", NULL);
+            }
             else{
             execlp(input, input, NULL);
             }
