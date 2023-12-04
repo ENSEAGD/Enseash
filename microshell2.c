@@ -34,16 +34,13 @@ while(1){
                 //User entered nothing so the code print the date
                 execlp("date", "date", NULL);
             }
-            else if (strcmp(input, "install fortune\n") == 0) {
-                execlp("sudo", "sudo", "apt-get", "install", "fortune", NULL);
-            }
             else{
             execlp(input, input, NULL);
             }
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
             //Parent process
-            wait(NULL); //Wait the end of the child process
+            waitpid(pid, &status, 0) < 0);
         } 
     
     
