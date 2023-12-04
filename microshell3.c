@@ -7,7 +7,7 @@
 
 int main(){
 
-
+int status;
 char input[100];
 ssize_t bytesRead;
 
