@@ -10,7 +10,7 @@ void displayPrompt(int status) {//we create a fonction to display the return cod
         //If the process ended normally
         write(STDOUT_FILENO, "[exit:", 6);
         dprintf(STDOUT_FILENO, "%d", WEXITSTATUS(status));
-        write(STDOUT_FILENO, "] % ", 4);
+        write(STDOUT_FILENO, "] ", 4);
     } else if (WIFSIGNALED(status)) {
         //If the process have been interrupted by a signal
         write(STDOUT_FILENO, "[sign:", 6);
