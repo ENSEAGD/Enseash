@@ -37,7 +37,8 @@ while(1){
                 execlp("date", "date", NULL);
             }
             else{
-            execlp(input, input, NULL);
+                printf("%s", &input);            
+                execlp(input, input, NULL);
             }
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
