@@ -4,6 +4,7 @@
 #include <sys/types.h>
 #include <string.h>
 #include <stdio.h>
+#include <time.h>
 
 int main(){
 
