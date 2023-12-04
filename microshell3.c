@@ -27,10 +27,10 @@ while(1){
         // If the user entered 'exit' or use CTRL+D we exit the program
          
         } 
+        int pipefd[2];
         pid_t pid = fork();//We give birth to a new copy process
-
+    
         if (pid == 0) {
-            int pipefd[2];
             close(pipefd[0]); //close the reading
             dup2(pipefd[1], STDOUT_FILENO); //redirect the output
             close(pipefd[1]); //close the unused output
