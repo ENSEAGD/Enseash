@@ -7,14 +7,14 @@
 
 int main () {
 
-char commande[100];
+char input[100];
 ssize_t bytesRead;
 
 while(1){
     
     write(STDOUT_FILENO, "Bienvenue dans le Shell ENSEA.\nPour quitter, tapez 'exit'.\n", 57);
 
-    bytesRead = read(STDIN_FILENO, commande, sizeof(commande));
+    bytesRead = read(STDIN_FILENO, input, sizeof(commande));
     
     commande[bytesRead] = '\0';
 
