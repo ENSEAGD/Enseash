@@ -28,7 +28,9 @@ while(1){
         // If the user entered 'exit' or use CTRL+D we exit the program
          
         } 
+    
         pid_t pid = fork();//We give birth to a new copy process
+    
             if (pid == 0) {
                 // Child process
                 if (strlen(input) == 0) {
@@ -40,10 +42,6 @@ while(1){
                     execvp(args[0], args);
                 }
                 
-                // If execvp fails
-                perror("execvp");
-                exit(EXIT_FAILURE);
-            }
         } else if (pid > 0) {
             //Parent process
             
