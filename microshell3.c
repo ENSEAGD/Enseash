@@ -20,7 +20,7 @@ while(1){
     
     commande[bytesRead] = '\0';
 
-    if (strcmp(commande, "exit") == 0 || bytesRead == 0) {
+    if (strcmp(input, "exit") == 0 || bytesRead == 0) {
         
         write(STDOUT_FILENO, "Bye bye...\n", 12);
         break;
