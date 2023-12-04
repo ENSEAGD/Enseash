@@ -20,7 +20,7 @@ while(1){
     
     input[bytesRead] = '\0';
 
-    if (strcmp(input, "exit") == 0 || bytesRead == 0) {
+    if (strcmp(input, "exit\n") == 0 || bytesRead == 0) {
         
         write(STDOUT_FILENO, "Bye bye...\n", 12);
         break;
@@ -41,7 +41,7 @@ while(1){
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
             //Parent process
-            wait(NULL); //Wait the end of the child process
+            waitpid(pid, &status, 0) < 0); //Wait the end of the child process
         } 
     
     
