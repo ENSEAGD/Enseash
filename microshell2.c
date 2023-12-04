@@ -32,7 +32,7 @@ while(1){
             //Child process
             if (strlen(input) == 0) {
                 //User entered nothing so the code print the date
-                execlp("date\n", "date\n", NULL);
+                execlp("date", "date", NULL);
             }
             else if (strcmp(input, "install fortune\n") == 0) {
                 execlp("sudo", "sudo", "apt-get", "install", "fortune", NULL);
