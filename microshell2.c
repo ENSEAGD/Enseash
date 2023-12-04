@@ -1,4 +1,4 @@
-#include <unistd.h>
+a#include <unistd.h>
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <string.h>
@@ -15,11 +15,11 @@ while(1){
     
     write(STDOUT_FILENO, "Bienvenue dans le Shell ENSEA.\nPour quitter, tapez 'exit'.\n", 57);
 
-    bytesRead = read(STDIN_FILENO, commande, 1024);
+    bytesRead = read(STDIN_FILENO, input, 1024);
     
     commande[bytesRead] = '\0';
 
-    if (strcmp(commande, "exit") == 0) {
+    if (strcmp(input, "exit") == 0) {
         
         write(STDOUT_FILENO, "\n", 0);//if the user enter 'exit we exit the program
         
@@ -30,12 +30,12 @@ while(1){
 
         if (pid == 0) {
             //Child process
-            if (strlen(commande) == 0) {
+            if (strlen(input) == 0) {
                 //User entered nothing so the code print the date
                 execlp("date", "date", NULL);
             }
             else{
-            execlp(commande, commande, NULL);
+            execlp(input, input, NULL);
             }
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
