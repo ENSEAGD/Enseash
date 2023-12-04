@@ -33,12 +33,12 @@ while(1){
         if (pid == 0) {
             //Child process
             if (strlen(input)== 0) {
-                char *args[] = {"date","-1", NULL};
+                char *args[] = {"date","-l", NULL};
                 //User entered nothing so the code print the date
                 execvp(args[0], args);
             }
             else{
-                char *args[] = {input,"-1", NULL};            
+                char *args[] = {input,"-l", NULL};            
                 execvp(args[0], args);
             }
             exit(EXIT_FAILURE);
