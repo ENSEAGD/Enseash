@@ -18,7 +18,7 @@ while(1){
     
     input[bytesRead] = '\0';
 
-    if (strcmp(input, "exit") == 0) {
+    if (strcmp(input, "exit\n") == 0) {
         
         write(STDOUT_FILENO, "\n", 0); //If the user enter 'exit' we exit the program
 
