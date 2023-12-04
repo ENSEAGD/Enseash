@@ -14,7 +14,7 @@ ssize_t bytesRead;
 
 while(1){
     
-    write(STDOUT_FILENO, "Bienvenue dans le Shell ENSEA.\nPour quitter, tapez 'exit'.\n", 57);
+    write(STDOUT_FILENO, "Bienvenue dans le Shell ENSEA.\nPour quitter, tapez 'exit'.\n", 59);
 
     bytesRead = read(STDIN_FILENO, input, 1024);
     
