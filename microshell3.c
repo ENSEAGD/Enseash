@@ -30,6 +30,9 @@ while(1){
         pid_t pid = fork();//We give birth to a new copy process
 
         if (pid == 0) {
+            close(pipefd[0]); //close the reading
+            dup2(pipefd[1], STDOUT_FILENO); //redirect the output
+            close(pipefd[1]); //close the unused output
             //Child process
             if (strlen(input)== 0) {
                 //User entered nothing so the code print the date
