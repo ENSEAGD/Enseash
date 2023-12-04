@@ -39,10 +39,10 @@ while(1){
         
         write(STDOUT_FILENO, "Bye bye...\n", 12);
         break;
-        // If the user enter nothing or use CTRL+D we exit the program
+        // If the user enter 'exit' or use CTRL+D we exit the program
          
         } 
-        pid_t pid = fork();
+        pid_t pid = fork();//We give birth to a new copy process
 
         if (pid == 0) {
             //Child process
