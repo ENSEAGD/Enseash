@@ -21,11 +21,12 @@ while(1){
 
     if (strcmp(commande, "exit") == 0) {
         
-        write(STDOUT_FILENO, "\n", 0);
+        write(STDOUT_FILENO, "\n", 0);//if the user enter 'exit we exit the program
+        
         break;
          
         } 
-        pid_t pid = fork();
+        pid_t pid = fork();//We give birth to a new copy process
 
         if (pid == 0) {
             //Child process
