@@ -13,15 +13,15 @@ ssize_t bytesRead;
 
 while(1){
     
-    write(STDOUT_FILENO, "Bienvenue dans le Shell ENSEA.\nPour quitter, tapez 'exit'.\n", 57);
+    write(STDOUT_FILENO, "Bienvenue dans le Shell ENSEA.\nPour quitter, tapez 'exit'.\n", 59);
 
     bytesRead = read(STDIN_FILENO, input, 1024);
     
     input[bytesRead] = '\0';
 
-    if (strcmp(input, "exit") == 0) {
+    if (strcmp(input, "exit\n") == 0) {
         
-        write(STDOUT_FILENO, "\n", 0);//if the user enter 'exit we exit the program
+        write(STDOUT_FILENO, "\n", 2);//if the user enter 'exit we exit the program
         
         break;
          
