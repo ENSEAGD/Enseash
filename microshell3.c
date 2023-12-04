@@ -8,7 +8,7 @@
 int main(){
 
 
-char commande[100];
+char input[100];
 ssize_t bytesRead;
 
 
@@ -18,7 +18,7 @@ while(1){
 
     bytesRead = read(STDIN_FILENO, input, 1024);
     
-    commande[bytesRead] = '\0';
+    input[bytesRead] = '\0';
 
     if (strcmp(input, "exit") == 0 || bytesRead == 0) {
         
