@@ -29,19 +29,21 @@ while(1){
          
         } 
         pid_t pid = fork();//We give birth to a new copy process
-    
-        if (pid == 0) {
-            //Child process
-            if (strlen(input)== 0) {
-                char *args[] = {"date","-l", NULL};
-                //User entered nothing so the code print the date
-                execvp(args[0], args);
+            if (pid == 0) {
+                // Child process
+                if (strlen(input) == 0) {
+                    char *args[] = {"date", "-l", NULL};
+                    // User entered nothing so the code prints the date
+                    execvp(args[0], args);
+                } else {
+                    char *args[] = {input, "-l", NULL};
+                    execvp(args[0], args);
+                }
+                
+                // If execvp fails
+                perror("execvp");
+                exit(EXIT_FAILURE);
             }
-            else{
-                char *args[] = {input,"-l", NULL};            
-                execvp(args[0], args);
-            }
-            exit(EXIT_FAILURE);
         } else if (pid > 0) {
             //Parent process
             
