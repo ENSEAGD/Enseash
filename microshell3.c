@@ -28,13 +28,9 @@ while(1){
         // If the user entered 'exit' or use CTRL+D we exit the program
          
         } 
-        int pipefd[2];
         pid_t pid = fork();//We give birth to a new copy process
     
         if (pid == 0) {
-            close(pipefd[0]); //close the reading
-            dup2(pipefd[1], STDOUT_FILENO); //redirect the output
-            close(pipefd[1]); //close the unused output
             //Child process
             if (strlen(input)== 0) {
                 //User entered nothing so the code print the date
@@ -46,14 +42,7 @@ while(1){
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
             //Parent process
-            close(pipefd[1]); // Ferme l'extrémité d'écriture du tube inutilisée
-
-            char buffer[4096];
-            ssize_t bytesRead = read(pipefd[0], buffer, sizeof(buffer));
-
-            if (bytesRead > 0) {
-                write(STDOUT_FILENO, buffer, bytesRead);
-            }
+            
             waitpid(pid, &status, 0); //Wait the end of the child process
         } 
     
