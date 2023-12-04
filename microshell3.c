@@ -45,6 +45,14 @@ while(1){
             exit(EXIT_FAILURE);
         } else if (pid > 0) {
             //Parent process
+            close(pipefd[1]); // Ferme l'extrémité d'écriture du tube inutilisée
+
+            char buffer[4096];
+            ssize_t bytesRead = read(pipefd[0], buffer, sizeof(buffer));
+
+            if (bytesRead > 0) {
+                write(STDOUT_FILENO, buffer, bytesRead);
+            }
             waitpid(pid, &status, 0); //Wait the end of the child process
         } 
     
