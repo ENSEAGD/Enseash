@@ -19,7 +19,9 @@ while(1){
     commande[bytesRead] = '\0';
 
     if (strcmp(commande, "exit") == 0) {
-        write(STDOUT_FILENO, "\n", 0);
+        
+        write(STDOUT_FILENO, "\n", 0); //If the user enter 'exit' we exit the program
+
         break;
         
         } else {
