@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdio.h>
 
-main(){
+int main(){
 
 
 char commande[100];
